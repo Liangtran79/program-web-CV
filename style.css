@@ -1,0 +1,200 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f5f7;
+    color: #000;
+    font-family: "EB Garamond", "Times New Roman", Times, Georgia, serif;
+    font-size: 15px;
+    line-height: 1.35;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Page Container - Letter/A4 format preview on screen */
+.resume-container {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: #fff;
+    padding: 24px 38px; /* ~ 0.3in top/bottom, 0.4in left/right like geometry settings */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+a {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: #2b6cb0;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.name {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.contact-info {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.contact-info span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-info a {
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.separator {
+    color: #555;
+    font-size: 10px;
+}
+
+/* Sections */
+.section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+}
+
+/* Section Content Indentation (matching LaTeX leftmargin=1.5em) */
+.section-content {
+    padding-left: 1.5em;
+}
+
+/* Row (Flexbox for left & right aligned text) */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.right {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Item block */
+.item {
+    margin-bottom: 8px;
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+/* Bullet list (matching LaTeX tight bullets) */
+.bullet-list {
+    margin: 4px 0 6px 1.2em;
+    padding: 0;
+    list-style-type: disc;
+}
+
+.bullet-list li {
+    margin-bottom: 2px;
+    text-align: justify;
+}
+
+/* Project Links */
+.project-links {
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+
+.project-links div {
+    margin-bottom: 2px;
+}
+
+/* Technical Skills Table */
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2px;
+}
+
+.skills-table td {
+    vertical-align: top;
+    padding: 2px 0;
+}
+
+.skill-category {
+    font-weight: 700;
+    white-space: nowrap;
+    padding-right: 2.5em;
+    width: 1%;
+}
+
+.skill-items {
+    text-align: left;
+}
+
+/* Print Optimization */
+@media print {
+    @page {
+        size: letter portrait;
+        margin: 0.3in 0.4in;
+    }
+
+    body {
+        background-color: #fff;
+    }
+
+    .resume-container {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+}
