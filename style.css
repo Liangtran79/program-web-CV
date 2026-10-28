@@ -1,4 +1,7 @@
-/* Reset & Base Styles */
+/* =========================================================
+   STYLE THEO MẪU CV HIỆN ĐẠI (DOMINIQUE MARCHET TEMPLATE)
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,186 +9,281 @@
 }
 
 body {
-    background-color: #f4f5f7;
-    color: #000;
-    font-family: "EB Garamond", "Times New Roman", Times, Georgia, serif;
-    font-size: 15px;
-    line-height: 1.35;
+    background-color: #e9ecef;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #222;
+    line-height: 1.45;
     -webkit-font-smoothing: antialiased;
+    font-size: 13px;
 }
 
-/* Page Container - Letter/A4 format preview on screen */
-.resume-container {
+/* Khổ trang mô phỏng A4 chuẩn */
+.cv-page {
     width: 210mm;
     min-height: 297mm;
-    margin: 20px auto;
-    background: #fff;
-    padding: 24px 38px; /* ~ 0.3in top/bottom, 0.4in left/right like geometry settings */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 25px auto;
+    background: #ffffff;
+    padding: 36px 42px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Links */
-a {
-    color: #000;
-    text-decoration: underline;
-    text-underline-offset: 2px;
+/* ================= HEADER ================= */
+.cv-header {
+    display: grid;
+    grid-template-columns: 105px 1fr auto;
+    gap: 24px;
+    align-items: center;
 }
 
-a:hover {
-    color: #2b6cb0;
+/* Avatar */
+.header-photo {
+    width: 105px;
+    height: 115px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Header */
-.header {
-    text-align: center;
-    margin-bottom: 12px;
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
 }
 
-.name {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+/* Tên & Vị trí */
+.header-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.candidate-name {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
+    color: #111;
+    line-height: 1.15;
     margin-bottom: 6px;
 }
 
-.contact-info {
-    font-size: 14px;
+.candidate-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: #555;
+}
+
+/* Thông tin liên hệ */
+.header-contact {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12.5px;
+    color: #333;
 }
 
-.contact-info span {
-    display: inline-flex;
+.contact-item {
+    display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 
-.contact-info a {
+.contact-item i {
+    width: 14px;
+    text-align: center;
+    color: #111;
+    font-size: 12px;
+}
+
+.contact-item a {
+    color: #222;
     text-decoration: none;
+    transition: color 0.2s;
 }
 
-.contact-info a:hover {
+.contact-item a:hover {
+    color: #0066cc;
     text-decoration: underline;
 }
 
-.separator {
-    color: #555;
-    font-size: 10px;
+/* Đường phân cách mảnh */
+.divider {
+    height: 1px;
+    background-color: #222;
+    margin: 16px 0;
 }
 
-/* Sections */
+/* ================= TIÊU ĐỀ SECTION ================= */
 .section {
-    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+.section-heading {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #111;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #111;
+}
+
+/* PROFIL / GIỚI THIỆU */
+.profile-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #333;
+    text-align: justify;
+}
+
+/* ================= GRID 2 CỘT ================= */
+.cv-body-grid {
+    display: grid;
+    grid-template-columns: 36% 64%;
+    gap: 28px;
+    align-items: start;
+}
+
+/* ================= CỘT TRÁI ================= */
+.col-left {
+    padding-right: 6px;
+}
+
+/* Khối học vấn */
+.block-item {
     margin-bottom: 10px;
 }
 
-.section-title {
-    font-size: 15px;
+.item-title {
+    font-size: 12.5px;
     font-weight: 700;
-    letter-spacing: 0.5px;
     text-transform: uppercase;
-    border-bottom: 1px solid #000;
-    padding-bottom: 2px;
-    margin-bottom: 6px;
+    color: #111;
+    line-height: 1.25;
 }
 
-/* Section Content Indentation (matching LaTeX leftmargin=1.5em) */
-.section-content {
-    padding-left: 1.5em;
+.item-sub {
+    font-size: 12px;
+    color: #555;
+    margin: 2px 0;
 }
 
-/* Row (Flexbox for left & right aligned text) */
-.row {
+.item-date {
+    font-size: 11.5px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.item-highlight {
+    font-size: 12px;
+    color: #222;
+}
+
+/* Kỹ năng */
+.skill-group {
+    margin-bottom: 9px;
+}
+
+.skill-group-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.skill-tags {
+    font-size: 12px;
+    color: #444;
+    line-height: 1.4;
+}
+
+/* Thế mạnh danh sách */
+.bullet-list-left {
+    margin: 4px 0 0 16px;
+    padding: 0;
+    list-style-type: disc;
+}
+
+.bullet-list-left li {
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #333;
+    line-height: 1.35;
+}
+
+/* ================= CỘT PHẢI ================= */
+.col-right {
+    padding-left: 6px;
+}
+
+.exp-item, .project-item {
+    margin-bottom: 14px;
+}
+
+.exp-header, .project-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 2px;
 }
 
-.bold {
+.exp-header .item-title, .project-header .item-title {
+    font-size: 13px;
     font-weight: 700;
 }
 
-.italic {
-    font-style: italic;
-}
-
-.right {
-    text-align: right;
+.exp-header .item-date, .project-header .item-date {
+    font-size: 11.5px;
+    color: #666;
     white-space: nowrap;
 }
 
-/* Item block */
-.item {
-    margin-bottom: 8px;
-}
-
-.item:last-child {
-    margin-bottom: 0;
-}
-
-/* Bullet list (matching LaTeX tight bullets) */
-.bullet-list {
-    margin: 4px 0 6px 1.2em;
+.exp-bullets {
+    margin: 5px 0 0 16px;
     padding: 0;
     list-style-type: disc;
 }
 
-.bullet-list li {
-    margin-bottom: 2px;
+.exp-bullets li {
+    font-size: 12.5px;
+    margin-bottom: 4px;
+    color: #333;
+    line-height: 1.45;
     text-align: justify;
 }
 
-/* Project Links */
-.project-links {
-    font-size: 14px;
-    margin-top: 3px;
-    margin-bottom: 6px;
+.exp-bullets a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 500;
 }
 
-.project-links div {
-    margin-bottom: 2px;
+.exp-bullets a:hover {
+    color: #0066cc;
 }
 
-/* Technical Skills Table */
-.skills-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2px;
-}
-
-.skills-table td {
-    vertical-align: top;
-    padding: 2px 0;
-}
-
-.skill-category {
-    font-weight: 700;
-    white-space: nowrap;
-    padding-right: 2.5em;
-    width: 1%;
-}
-
-.skill-items {
-    text-align: left;
-}
-
-/* Print Optimization */
+/* ================= PRINT STYLES ================= */
 @media print {
     @page {
-        size: letter portrait;
-        margin: 0.3in 0.4in;
+        size: A4 portrait;
+        margin: 0.25in 0.35in;
     }
 
     body {
         background-color: #fff;
+        font-size: 12px;
     }
 
-    .resume-container {
+    .cv-page {
         width: 100%;
         min-height: auto;
         margin: 0;
@@ -193,8 +291,15 @@ a:hover {
         box-shadow: none;
     }
 
-    a {
-        text-decoration: none;
-        color: #000;
+    .divider {
+        margin: 12px 0;
+    }
+
+    .section {
+        margin-bottom: 10px;
+    }
+
+    .exp-item, .project-item {
+        margin-bottom: 10px;
     }
 }
